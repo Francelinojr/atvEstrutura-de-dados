@@ -1,0 +1,20 @@
+PYTHON_FILE = grafo2.py
+
+INPUT_FILE = grafo.txt
+
+default: run
+
+run: compile
+	python $(PYTHON_FILE)
+
+compile:
+	chmod +x $(PYTHON_FILE)
+
+clean:
+	rm -f *.pyc
+
+read_graph:
+	python $(PYTHON_FILE) < $(INPUT_FILE)
+
+clean_all: clean
+	rm -f output.txt
